@@ -102,7 +102,7 @@ const modelMove = () => {
 	sections.forEach((section) => {
 		const rect = section.getBoundingClientRect()
 
-		if (rect.top <= window.innerWidth / 3) {
+		if (rect.top <= window.innerHeight / 3) {
 			currentSection = section.id
 		}
 	})
