@@ -20,7 +20,7 @@ let bee: any
 let mixer: any // animation manager
 const loader = new GLTFLoader()
 loader.load(
-	'/src/assets/demon_bee_full_texture.glb',
+	'/demon_bee_full_texture.glb',
 	function (gltf: any) {
 		// Complete
 		bee = gltf.scene
