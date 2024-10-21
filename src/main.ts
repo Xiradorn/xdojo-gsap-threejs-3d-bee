@@ -3,6 +3,7 @@ import './style.scss'
 import * as THREE from 'https://cdn.skypack.dev/three@0.129.0/build/three.module.js'
 import { GLTFLoader } from 'https://cdn.skypack.dev/three@0.129.0/examples/jsm/loaders/GLTFLoader.js'
 import { gsap } from 'https://cdn.skypack.dev/gsap'
+import model from './assets/demon_bee_full_texture.glb'
 
 // Cam View Field
 const camera = new THREE.PerspectiveCamera(
@@ -20,7 +21,7 @@ let bee: any
 let mixer: any // animation manager
 const loader = new GLTFLoader()
 loader.load(
-	'/demon_bee_full_texture.glb',
+	model,
 	function (gltf: any) {
 		// Complete
 		bee = gltf.scene
@@ -38,10 +39,10 @@ loader.load(
 
 		console.log(gltf.animations)
 	},
-	function (xhr) {
+	function (xhr: any) {
 		// Check loading
 	},
-	function (error) {
+	function (error: any) {
 		// Check errors
 	},
 )
@@ -96,7 +97,7 @@ let arrPositionModel: {
 // Move model function
 const modelMove = () => {
 	const sections = document.querySelectorAll('.section')
-	let currentSection
+	let currentSection: any
 
 	sections.forEach((section) => {
 		const rect = section.getBoundingClientRect()
@@ -136,7 +137,9 @@ const modelMove = () => {
 
 // Scroll event
 window.addEventListener('scroll', () => {
-	if (bee) modelMove()
+	if (bee) {
+		modelMove()
+	}
 })
 
 // Responsive
