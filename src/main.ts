@@ -47,7 +47,7 @@ loader.load(
 	},
 )
 const renderer = new THREE.WebGLRenderer({ alpha: true })
-// renderer.setSize(window.innerWidth, window.innerHeight) // better use windows resize event - resp
+renderer.setSize(window.innerWidth, window.innerHeight) // better use in comb with windows resize event - resp
 document.querySelector('#container3D')?.appendChild(renderer.domElement)
 
 // lights
